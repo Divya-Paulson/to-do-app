@@ -5,22 +5,30 @@ import ToDoEditor from '../../components/todoEditor';
 import { useState } from 'react'
 
 const Todo = () => {
-    const addTodo = (todo) => {
+    const createTodo = (todo) => {
         setTodo(todo);
         setOpen(true);
     };
 
+    const addTodo = (todo) => {
+        setTodoList([...todoList, todo]);
+        onClose();
+    }
+
+
     const [open, setOpen] = useState(false);
     const [todo, setTodo] = useState({});
+    const [todoList, setTodoList] = useState([]);
+
     const onClose = () => {
         setOpen(false);
     };
     return <div className='todo'>
         <header>TODO App</header>
-        <CreateNewTask onAddTodo={ addTodo }></CreateNewTask>
-        <TodoList></TodoList>
-        <ToDoEditor todo={ todo } open={ open } onClose={ onClose }></ToDoEditor>
+        <CreateNewTask onAddTodo={ createTodo }></CreateNewTask>
 
+        <ToDoEditor todo={ todo } open={ open } onClose={ onClose } setTodo={ setTodo } onSaveTodo={ addTodo }></ToDoEditor>
+        <TodoList todoList={ todoList }></TodoList>
     </div>
 }
 

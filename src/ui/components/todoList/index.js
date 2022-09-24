@@ -1,10 +1,12 @@
 import './todoList.css';
 // import Todo from '../todo'
 
-const TodoList = () => {
+const TodoList = ({ todoList }) => {
     return <div className='todoList'>
         <div>Todos</div>
-        {/* <Todo></Todo> */ }
+        { todoList.map(todo => (
+            <div>{ todo.heading }</div>
+        )) }
     </div>
 }
 
