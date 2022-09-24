@@ -1,4 +1,4 @@
-.todoEditor{
+.createNewTask{
     
     background: rgb(217 236 217);
     display: flex;
@@ -8,7 +8,7 @@
     border-radius: 8px;
     font-size: 20px;
 }
-.todoEditor input{
+.createNewTask input{
     width: 75%;
     
     font-size: 20px;

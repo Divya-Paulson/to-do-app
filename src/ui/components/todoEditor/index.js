@@ -1,13 +1,34 @@
 
-import './todoEditor.css';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+
+import { TodoStyle, InputStyle } from './style';
+
+export default function ToDoEditor({ todo, onClose, open }) {
 
 
-const TodoEditor = ({ onAddTodo }) => {
-    return <div className='todoEditor'>
-        <input type='text' placeholder='Add new To-do'></input>
-        <button onClick={ onAddTodo }>+</button>
+    return (
+        <div>
+            <Dialog open={ open } onClose={ onClose }>
+                <DialogTitle>Adding New To-Do</DialogTitle>
+                <DialogContent>
 
-    </div>
+                    <TodoStyle >
+                        <InputStyle value={ todo.heading } type='text' placeholder='Enter the To-do'></InputStyle>
+                        <InputStyle type='date' ></InputStyle>
+                        <InputStyle type='text' placeholder='description'></InputStyle>
+                    </TodoStyle>
+
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={ onClose }>Cancel</Button>
+                    <Button onClick={ onClose }>Add</Button>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
 }
 
-export default TodoEditor;

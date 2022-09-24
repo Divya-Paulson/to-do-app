@@ -1,10 +1,10 @@
 import './todoList.css';
-import Todo from '../todo';
+// import Todo from '../todo'
 
 const TodoList = () => {
     return <div className='todoList'>
         <div>Todos</div>
-        <Todo></Todo>
+        {/* <Todo></Todo> */ }
     </div>
 }
 
