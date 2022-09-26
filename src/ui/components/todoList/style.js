@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const TodoStyle = styled.div
+export const ListStyle = styled.div
     `
 display:flex;
 flex-direction:column;
-align-items
-width: 87%;
+width: 75%;
 padding: 20px;
 margin: 20px;
+margin-left: 60px;
 border: solid 5px rgb(143 188 143);
 background-color: rgb(217 236 217);
 border-radius: 8px
@@ -16,7 +16,7 @@ border-radius: 8px
     ;
 
 
-export const InputStyle = styled.input
+export const ItemStyle = styled.div
     `
     border:none;
     background-color: rgb(217 236 217);
@@ -25,3 +25,4 @@ export const InputStyle = styled.input
 
     `
     ;
+
